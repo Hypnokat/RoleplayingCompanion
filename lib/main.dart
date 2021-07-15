@@ -4,7 +4,6 @@ void main() => runApp(MaterialApp(
   home: Home(),
 ));
 
-
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,29 +13,46 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.purple[400],
       ),
-      body:
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text('Hello, world'),
-          FlatButton(
-            onPressed: () {},
-            color: Colors.amber,
-            child: Text('click me'),
-          ),
-          Container(
-            color: Colors.cyan,
-            padding: EdgeInsets.all(30.0),
-            child: Text('inside container'),
-          ),
-        ],
+      body:Center(child: Text('Home Page')),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.purple[400],
+              ),
+              child: Text('Menu'),
+            ),
+            ListTile(
+              title: Text('Initiative Tracker'),
+              onTap: () {
+                //update state of app
+                //Close the drawer
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => InitiativeTracker())
+                );
+              },
+            ),
+          ],
+        ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Text('Click'),
-        backgroundColor: Colors.purple[400],
+
+    );
+  }
+}
+
+class InitiativeTracker extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Initiative Tracker'),
       ),
+      body: Center(
+
+      )
     );
   }
 }
