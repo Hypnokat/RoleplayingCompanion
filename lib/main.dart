@@ -25,10 +25,9 @@ class Home extends StatelessWidget {
               child: Text('Menu'),
             ),
             ListTile(
-              title: Text('Initiative Tracker'),
+              leading: Icon(Icons.book),
+              title: const Text('Initiative Tracker'),
               onTap: () {
-                //update state of app
-                //Close the drawer
                 Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => InitiativeTracker())
