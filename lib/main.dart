@@ -47,11 +47,50 @@ class InitiativeTracker extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        // leading: Icon(Icons.hourglass_bottom),
         title: Text('Initiative Tracker'),
+        centerTitle: true,
+        backgroundColor: Colors.red[900],
       ),
-      body: Center(
-
-      )
+      body: Column(children: <Widget>[
+            Row(
+              children: const <Widget>[
+                 Expanded(
+                      child: TextField(
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            hintText: 'Name of Player/Creature'
+                        ),
+                      ),
+                  ),
+                Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'Initiative'
+                    ),
+                  ),
+                ),
+                Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                          hintText: 'HP'
+                      ),
+                    ),
+                  ),
+                Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'AC'
+                    ),
+                  ),
+                ),
+              ],
+          ),
+        ],
+      ),
     );
   }
 }
